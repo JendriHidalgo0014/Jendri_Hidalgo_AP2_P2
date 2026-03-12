@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import ucne.edu.jendri_hidalgo_ap2_p2.presentation.tareas.details.DetailBorrameScreen
-import ucne.edu.jendri_hidalgo_ap2_p2.presentation.tareas.list.ListBorrameScreen
+import ucne.edu.jendri_hidalgo_ap2_p2.presentation.tareas.details.DetailJugadorScreen
+import ucne.edu.jendri_hidalgo_ap2_p2.presentation.tareas.list.ListJugadorScreen
 
 @Composable
 fun AppNavHost(
@@ -13,18 +13,18 @@ fun AppNavHost(
 ) {
     NavHost(
         navController = navHostController,
-        startDestination = Screen.BorrameList
+        startDestination = Screen.JugadorList
     ) {
-        composable<Screen.BorrameList> {
-            ListBorrameScreen(
-                onBorrameClick = { Id ->
-                    navHostController.navigate(Screen.BorrameDetail(Id))
+        composable<Screen.JugadorList> {
+            ListJugadorScreen(
+                onJugadorClick = { Id ->
+                    navHostController.navigate(Screen.JugadorDetail(Id))
                 }
             )
         }
 
-        composable<Screen.BorrameDetail> {
-            DetailBorrameScreen(
+        composable<Screen.JugadorDetail> {
+            DetailJugadorScreen(
                 onBack = {
                     navHostController.navigateUp()
                 }
