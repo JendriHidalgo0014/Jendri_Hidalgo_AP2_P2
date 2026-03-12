@@ -10,7 +10,7 @@ interface JugadoresApi {
     suspend fun getJugadores(
         @Query("nombres") nombres: String?,
         @Query("email") email: String?,
-    ): Response<JugadorResponseDto>
+    ): Response<List<JugadorDto>>
 
     @GET("api/Jugadores/{id}")
     suspend fun getJugadorDetail(

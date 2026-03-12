@@ -23,7 +23,7 @@ object AppModule {
     @Singleton
     fun provideApi(moshi: Moshi): JugadoresApi {
         return Retrofit.Builder()
-            .baseUrl("https://gestionhuacalesapi.azurewebsites.net/swagger/index.html")
+            .baseUrl("https://gestionhuacalesapi.azurewebsites.net/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             .create(JugadoresApi::class.java)
